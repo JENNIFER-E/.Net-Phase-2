@@ -1,0 +1,23 @@
+
+<div class="login-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <form class="form-signin" (ngSubmit)='onSubmit(signInForm)' #signInForm="ngForm">
+    
+                <h1 class="h3 mb-3 fw-normal">Admin sign in</h1>         
+                <label for="inputEmail">Email address</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com" name="email" required autofocus ngModel>
+                <label for="inputPassword">Password</label>
+               <input type="password" class="form-control" id="inputPassword" placeholder="Password" required ngModel name="password">
+               <a id="link2" [routerLink]="['']">Click to go to customer login</a>
+                <button class="w-100 btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <div class="alert alert-danger" role="alert" *ngIf="isFormValid">
+                    Enter all fields
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="areCredInvalid">
+                    Credentials invalid
+                </div>
+              </form>
+        </div>
+    </div>
+</div>

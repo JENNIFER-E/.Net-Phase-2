@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <h2>Item list</h2>
+    <a class="btn btn-primary" routerLink="add/0">Add Item</a>
+    <table class="table">
+        <thead class = "table-dark" >
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        
+            <th>Price</th>
+            <th>Change Item</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of items">
+            <td> {{i.id}} </td>
+            <td>{{i.name}}</td>
+           
+            <td>{{i.price}}</td>
+            <td><a [routerLink]="['edit',i.id]">Edit</a></td>
+            <td><button class="btn btn-danger" (click)="onDelete(i.id)">X</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
